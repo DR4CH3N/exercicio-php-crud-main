@@ -8,10 +8,25 @@ if (isset($_POST['cadastrar']) ) {
     // capturando o que foi digitado no campo nome
     //$nome = $_POST['nome'];
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+    $nota1 = filter_input(INPUT_POST, 'primeira', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $nota2 = filter_input(INPUT_POST, 'segunda', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     // filter input vai sanitizar o campo 'nome'  e vai adicionar o nome do filtro
 
+    $media = ($nota1 + $nota2) /2;
+
+    if ($media >= 7) {
+    $situacao = "aprovado";
+    }
+    else {
+    $situacao = "reprovado";
+    }
+    /*
+    função inserir(parametros...) e depois o header
+    }
+    */
+
     // chamando a função e passando os dados de conexão e o nome digitado
-    inserirAluno($conexao, $nome);
+    inserirAluno($conexao, $nome, $nota1, $nota2, $media, $situacao);
 
     // redirecionamento, vai redirecionar para listar.php quando voce terminar de inserir um fabricante
     header("location:visualizar.php");
@@ -24,7 +39,7 @@ if (isset($_POST['cadastrar']) ) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL</title>
+<title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL | </title>
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
