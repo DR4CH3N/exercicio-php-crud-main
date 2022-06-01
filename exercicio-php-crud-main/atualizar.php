@@ -1,8 +1,6 @@
 <?php
 require_once 'src/funcoes-alunos.php';
 
-$alunos = lerAlunos($conexao);
-
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 $aluno = lerUmAluno($conexao, $id);
@@ -60,13 +58,13 @@ if (isset($_POST['atualizar']) ) {
         <input type="hidden" name="<?=$alunos['id']?>">
         
 	    <p><label for="nome">Nome:</label>
-	    <input value="<?=$alunos['nome']?>" type="text" name="nome" id="nome" required></p>
+	    <input value="<?=$aluno['nome']?>" type="text" name="nome" id="nome" required></p>
         
         <p><label for="primeira">Primeira nota:</label>
-	    <input value="<?=$alunos['primeira']?>" name="primeira" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$aluno['primeira']?>" name="primeira" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input value="<?=$alunos['segunda']?>" name="segunda" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$aluno['segunda']?>" name="segunda" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
