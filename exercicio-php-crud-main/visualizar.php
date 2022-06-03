@@ -109,6 +109,8 @@ as páginas de atualização e exclusão. -->
 
 
     <p><a href="index.php">Voltar ao início</a></p>
+
+    <script src="js/confirma.js"></script>
 </div>
 
 </body>
