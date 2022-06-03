@@ -3,7 +3,7 @@ require_once 'src/conecta.php';
 require_once "src/funcoes-alunos.php";
 
 $listaDeAlunos = lerAlunos($conexao);
-var_dump($listaDeAlunos);
+
 
 /*
 if (isset($_POST['cadastrar']) ) {
@@ -29,6 +29,7 @@ else {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
 <link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="bootstrap/css-bootstrap/bootstrap.css">
 </head>
 <body>
 <div class="container">

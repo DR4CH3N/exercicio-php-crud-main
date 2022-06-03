@@ -41,6 +41,7 @@ if (isset($_POST['cadastrar']) ) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL | </title>
 <link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="bootstrap/css-bootstrap/bootstrap.css">
 </head>
 <body>
 <div class="container">
