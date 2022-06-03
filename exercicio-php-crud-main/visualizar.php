@@ -78,7 +78,7 @@ foreach ($listaDeAlunos as $aluno) {
             <td><?=$aluno["primeira"]?></td>
             <td><?=$aluno["segunda"]?></td>
             <td><?=$aluno["media"]?></td>
-            <td><?=$aluno["situacao"]?></td>
+            <td class="<?=$aluno["situacao"]?>"><?=$aluno["situacao"]?></td>
 
             
            
